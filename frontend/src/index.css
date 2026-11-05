@@ -364,11 +364,15 @@ img { max-width: 100%; }
   position: absolute;
   top: 50%;
   left: 50%;
+  width: 0;
+  height: 0;
+  transform-origin: 0 0; /* rotate around the circle's centre, not the chip's own centre */
   transform: rotate(var(--angle)) translateX(var(--r));
 }
 
 .orbit-chip span {
   display: block;
+  width: max-content;
   transform: translate(-50%, -50%) rotate(calc(-1 * var(--angle)));
   font-family: var(--mono);
   font-size: 0.68rem;

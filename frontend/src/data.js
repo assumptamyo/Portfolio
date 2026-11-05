@@ -17,7 +17,7 @@ export const stats = [
   { value: 3, suffix: '+', label: 'Full-stack projects' },
   { value: 1, suffix: '', label: 'Research publication' },
   { value: 3, suffix: ' mo', label: 'Industry internship' },
-  { value: 8.0, suffix: '', label: 'CGPA / 10', decimals: 1 },
+  { value: 8.01, suffix: '', label: 'CGPA / 10', decimals: 2 },
 ];
 
 export const experience = [
@@ -38,5 +38,5 @@ export const education = {
   degree: 'B.Tech in Computer Science & Engineering',
   school: 'Parul University, Vadodara',
   period: 'Expected May 2027',
-  grade: 'CGPA 8.0 / 10',
+  grade: 'CGPA 8.01 / 10',
 };
