@@ -81,9 +81,7 @@ export default function Hero() {
         ))}
       </div>
 
-      <a href="#about" className="scroll-cue" aria-label="Scroll to About">
-        <span />
-      </a>
+     
     </div>
   );
 }

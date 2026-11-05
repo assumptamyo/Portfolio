@@ -27,7 +27,7 @@ body {
   color: var(--text-body);
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 a { color: inherit; }

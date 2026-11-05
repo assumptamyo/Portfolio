@@ -11,8 +11,8 @@ import Footer from './components/Footer.jsx';
 export default function App() {
   return (
     <>
+      <Navbar />
       <header>
-        <Navbar />
         <Hero />
       </header>
       <main>
