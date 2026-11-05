@@ -34,13 +34,17 @@ const projects = [
     title: 'Unfazed',
     category: 'SaaS for Therapists',
     description:
-      'A SaaS platform for therapists with real-time dashboards, secure authentication, OTP verification and integrated chat — built during my Unlox internship.',
+      'A SaaS platform for therapists with real-time dashboards, a client CRM, personalized booking pages, secure authentication, OTP verification and integrated chat — built during my Unlox internship.',
     highlights: [
       'Secure auth with OTP verification',
+      'Personalized booking pages where clients book from each therapist’s available slots',
+      'Client CRM and real-time chat between therapists and clients',
       'Third-party API integrations and payment gateway workflows',
     ],
     image: '/images/unfazed.png',
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'MONGODB'],
+    liveUrl: 'https://unfazed-saas-umber.vercel.app',
+    repoUrl: 'https://github.com/assumptamyo/unfazed-saas',
   },
   {
     title: 'Don Coffee Shop',
@@ -50,6 +54,8 @@ const projects = [
     highlights: ['Menu & product management', 'Comments with dynamic like / react buttons'],
     image: '/images/coffee-shop.png',
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'MONGODB'],
+    liveUrl: 'https://assumptamyo.github.io/Coffee-Shop/',
+    repoUrl: 'https://github.com/assumptamyo/Coffee-Shop',
   },
 ].map((p, i) => ({ ...p, order: i }));
 
