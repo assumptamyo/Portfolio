@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <a href="#top" className="brand">
-        MYO<span className="brand-dot">.</span>THANDAR
+        MYO THANDAR
       </a>
       <button className={`nav-toggle ${open ? 'open' : ''}`} aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen(!open)}>
         <span /><span /><span />

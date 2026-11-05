@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { API_URL } from './api.js';
 
 export default function useApi(path) {
   const [data, setData] = useState([]);
@@ -6,7 +7,7 @@ export default function useApi(path) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch(path)
+    fetch(`${API_URL}${path}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Request failed (${res.status})`);
         return res.json();

@@ -16,7 +16,7 @@ const skills = Object.entries(skillGroups)
   .flatMap(([group, names]) => names.map((name) => ({ name, group })))
   .map((s, i) => ({ ...s, order: i }));
 
-// Images are placeholders — swap in real screenshots of each project (frontend/public/images)
+// Project screenshots live in frontend/public/images
 const projects = [
   {
     title: 'OfficeEase',
@@ -27,7 +27,7 @@ const projects = [
       'Turned book-based curricula into compact, sequential digital lessons',
       'Research paper published in IJRTI (Vol. 11, Issue 9)',
     ],
-    image: '/images/project4.jpg',
+    image: '/images/officeease.png',
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'MONGODB', 'TAILWIND'],
   },
   {
@@ -39,7 +39,7 @@ const projects = [
       'Secure auth with OTP verification',
       'Third-party API integrations and payment gateway workflows',
     ],
-    image: '/images/project3.jpg',
+    image: '/images/unfazed.png',
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'MONGODB'],
   },
   {
@@ -48,7 +48,7 @@ const projects = [
     description:
       'A full-stack e-commerce app for coffee-shop menu management and product sales, with an interactive customer feedback section.',
     highlights: ['Menu & product management', 'Comments with dynamic like / react buttons'],
-    image: '/images/project2.jpg',
+    image: '/images/coffee-shop.png',
     tags: ['REACT', 'NODE.JS', 'EXPRESS', 'MONGODB'],
   },
 ].map((p, i) => ({ ...p, order: i }));

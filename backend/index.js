@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import apiRoutes from './routes/api.js';
@@ -15,10 +16,12 @@ app.use(express.json());
 
 app.use('/api', apiRoutes);
 
-// In production, serve the built React app
+// If the React build is present (single-server deploy), serve it too
 const frontendDist = path.join(__dirname, '../frontend/dist');
-app.use(express.static(frontendDist));
-app.get(/^(?!\/api).*/, (req, res) => res.sendFile(path.join(frontendDist, 'index.html')));
+if (fs.existsSync(frontendDist)) {
+  app.use(express.static(frontendDist));
+  app.get(/^(?!\/api).*/, (req, res) => res.sendFile(path.join(frontendDist, 'index.html')));
+}
 
 app.use((err, req, res, next) => {
   console.error(err);

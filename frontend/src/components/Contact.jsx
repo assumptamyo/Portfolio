@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Reveal from './Reveal.jsx';
+import { API_URL } from '../api.js';
 
 const empty = { name: '', email: '', subject: '', message: '' };
 
@@ -19,7 +20,7 @@ export default function Contact() {
     e.preventDefault();
     setStatus({ state: 'sending', text: '' });
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
