@@ -58,7 +58,11 @@ export default function Hero() {
         </div>
 
         <div className="hero-visual hero-in" style={{ "--i": 3 }}>
-          <div className="orbit" aria-hidden="true">
+          <div className="orbit" aria-hidden="true" />
+          <div className="hero-img">
+            <img src="/images/no-bg.png" alt={profile.name} />
+          </div>
+          <div className="orbit orbit-chips" aria-hidden="true">
             {orbitTech.map((tech, i) => (
               <span
                 className="orbit-chip"
@@ -68,9 +72,6 @@ export default function Hero() {
                 <span>{tech}</span>
               </span>
             ))}
-          </div>
-          <div className="hero-img">
-            <img src="/images/no-bg.png" alt={profile.name} />
           </div>
         </div>
       </div>

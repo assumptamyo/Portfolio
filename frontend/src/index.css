@@ -357,6 +357,9 @@ img { max-width: 100%; }
   animation: spin 40s linear infinite;
 }
 
+/* Chips ride the same circle but sit above the photo so none get hidden */
+.orbit-chips { border: none; z-index: 2; }
+
 .orbit-chip {
   position: absolute;
   top: 50%;
