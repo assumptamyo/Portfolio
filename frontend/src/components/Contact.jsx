@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Reveal from './Reveal.jsx';
 import { API_URL } from '../api.js';
 
-const empty = { name: '', email: '', subject: '', message: '' };
+const empty = { name: '', email: '', subject: '', message: '', website: '' };
 
 const links = [
   ['EMAIL', 'assumptamyo@gmail.com', 'mailto:assumptamyo@gmail.com'],
@@ -25,8 +25,8 @@ export default function Contact() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.message);
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data.message || 'Server is unavailable right now. Please try again in a minute.');
       setForm(empty);
       setStatus({ state: 'success', text: data.message });
     } catch (err) {
@@ -79,6 +79,8 @@ export default function Contact() {
           <span className="field-label">MESSAGE</span>
           <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell me about your project..." required />
         </label>
+        {/* Honeypot for spam bots — hidden from people and screen readers */}
+        <input className="hp-field" name="website" value={form.website} onChange={handleChange} tabIndex={-1} autoComplete="off" aria-hidden="true" />
         <button type="submit" className="btn-send" disabled={status.state === 'sending'}>
           {status.state === 'sending' ? 'SENDING…' : 'SEND MESSAGE'}
         </button>
